@@ -11,7 +11,7 @@ show layer on top of it. LivePremier Plus's Companion panel adds the pair for yo
 
 ### Setting it up
 
-You need a LivePremier Plus newer than 0.18.7, the first with the Control API plugin.
+You need LivePremier Plus 0.18.8 or newer, the first release with the Control API plugin.
 
 1. In LivePremier Plus, open **Preconfig ▸ LivePremier Plus → Plugins** and switch on
    **Control API**. It is off until you do.

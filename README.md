@@ -16,6 +16,8 @@ Triggers, the Console and your `@variables`. The switcher's own sources, memorie
 belong to Analog Way's **AWJ** module, which talks to the box directly. Run both;
 LivePremier Plus's Companion panel will add the pair for you.
 
+![The module's presets in Companion 5.0.7: GO with the standby cue on the key, cue 2 amber as the standby and cue 1 red as the one fired last, screen 1's layer 1 locked, an input sent to a layer, a router crosspoint lit, and a HyperDeck playing with its time left](docs/screenshots/presets.png)
+
 Not affiliated with or endorsed by Analog Way. Product names are used only to describe
 compatibility.
 
@@ -36,8 +38,8 @@ All builds, checksums and release notes: [github.com/stoatworks-labs/companion-m
 
 ## Install
 
-You need a LivePremier Plus newer than 0.18.7: the Control API plugin this module talks to
-arrived after it.
+You need LivePremier Plus 0.18.8 or newer, the first release with the Control API plugin this
+module talks to.
 
 1. Download the `.tgz` above. Don't unpack it.
 2. In Companion (5.0 or newer), open **Modules** and choose **Import module package**, then
@@ -60,10 +62,13 @@ isn't one, and a key pressed meanwhile is refused in the log rather than quietly
 Matrix, HyperDeck, Triggers and plugin keys go straight to LivePremier Plus and work without
 a page.
 
-## Actions, feedbacks, variables, presets
+## Using it
 
-The full list is in [companion/HELP.md](companion/HELP.md), which is also what Companion shows
-under the connection's help button.
+The [user guide](docs/USER-GUIDE.md) ([PDF](docs/USER-GUIDE.pdf)) covers setting up, what each
+key's colour means, how cues and layers are named, and what to check when a key does nothing.
+The full list of actions, feedbacks, variables and presets is in
+[companion/HELP.md](companion/HELP.md), which is also what Companion shows under the
+connection's help button.
 
 ## Develop
 
