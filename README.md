@@ -29,8 +29,8 @@ compatibility.
 
 This release contains:
 
-- [`companion-module-livepremier-plus-pkg.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/latest/download/companion-module-livepremier-plus-pkg.tgz) — npm package
-- [`livepremier-plus-0.1.1.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/download/v0.1.1/livepremier-plus-0.1.1.tgz) — npm package
+- [`companion-module-livepremier-plus-pkg.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/latest/download/companion-module-livepremier-plus-pkg.tgz) — npm package, 16 KB
+- [`livepremier-plus-0.1.1.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/download/v0.1.1/livepremier-plus-0.1.1.tgz) — npm package, 16 KB
 
 All builds, checksums and release notes: [github.com/stoatworks-labs/companion-module-livepremier-plus/releases](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases).
 
@@ -84,7 +84,6 @@ The HTTP contract this module speaks is LivePremier Plus's
 See [AGENTS.md](AGENTS.md) for how the module is put together and what it must not do.
 
 <!-- attributions:start -->
-
 This project is built on other people's work — see [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 <!-- attributions:end -->
 
