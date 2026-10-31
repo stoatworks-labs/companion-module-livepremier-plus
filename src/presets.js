@@ -289,7 +289,7 @@ export default function UpdatePresets(self) {
   /* ---------------------------------------------------------- Triggers */
   presets.restore = key(
     "Triggers: restore all",
-    `RESTORE\n${v("holds")} held`,
+    `PUT\nBACK\n${v("holds")} held`,
     DARK,
     [act("trigger_restore_all")],
     [fb("triggers_holding", {}, AMBER, BLACK)],

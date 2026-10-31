@@ -23,12 +23,12 @@ compatibility.
 
 ## Download
 
-**[v0.1.0](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/tag/v0.1.0)**
+**[v0.1.1](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/tag/v0.1.1)**
 
 This release contains:
 
 - [`companion-module-livepremier-plus-pkg.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/latest/download/companion-module-livepremier-plus-pkg.tgz) — npm package
-- [`livepremier-plus-0.1.0.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/download/v0.1.0/livepremier-plus-0.1.0.tgz) — npm package
+- [`livepremier-plus-0.1.1.tgz`](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases/download/v0.1.1/livepremier-plus-0.1.1.tgz) — npm package
 
 All builds, checksums and release notes: [github.com/stoatworks-labs/companion-module-livepremier-plus/releases](https://github.com/stoatworks-labs/companion-module-livepremier-plus/releases).
 
@@ -40,7 +40,7 @@ You need a LivePremier Plus newer than 0.18.7: the Control API plugin this modul
 arrived after it.
 
 1. Download the `.tgz` above. Don't unpack it.
-2. In Companion (4.1 or later), open **Modules** and choose **Import module package**, then
+2. In Companion (5.0 or newer), open **Modules** and choose **Import module package**, then
    pick the file. It appears as **Stoatworks Labs: LivePremier Plus**.
 3. In LivePremier Plus, switch on **Control API** under **Preconfig ▸ LivePremier Plus →
    Plugins**.

@@ -1,4 +1,5 @@
 node_modules
+.claude/
 *.tgz
 pkg/
 .DS_Store

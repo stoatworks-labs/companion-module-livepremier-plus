@@ -206,7 +206,7 @@ export default function UpdateActions(self) {
     send_source: {
       name: "Layer Groups: Send a source",
       description:
-        "Put a source on a layer or on every layer of a group, as the … menu on a source card does. A program send is refused while that screen's PGM padlock is shut, and nothing is sent mid-take.",
+        "Put a source on a layer or on every layer of a group, as the … menu on a source card does. It is refused while the padlock it would write past is shut on that screen: the … menu would ask first, and there is nobody here to ask.",
       options: [
         {
           type: "textinput",

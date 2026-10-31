@@ -27,6 +27,13 @@ no Stream Deck.
 Not run: a real LivePremier or Aquilon, a real HyperDeck, a physical surface, Companion on a
 different computer from LivePremier Plus.
 
+## v0.1.1
+
+The Restore key's text broke mid-word ("RESTOR / E") on a real 72-pixel button at every size
+Companion would pick, so it reads PUT BACK now. Docs only otherwise: Companion 5.0 or newer
+(tested on 5.0.7), and the Send action's description no longer promises a mid-take refusal the
+page doesn't make on its own — that comes from Preview lock's padlock.
+
 ## Running it the same way
 
 ```bash

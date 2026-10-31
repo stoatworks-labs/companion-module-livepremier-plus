@@ -5,7 +5,7 @@
   "name": "livepremier-plus",
   "shortname": "LivePremier Plus",
   "description": "Drive what LivePremier Plus adds to an Analog Way LivePremier: the Timeline's GO with the standby cue on the key, Layer Lock, Send to a layer group, Matrix Routing, HyperDecks, Triggers, the Console and your variables. Pair it with the AWJ module for the switcher itself. Not affiliated with Analog Way.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "repository": "git+https://github.com/stoatworks-labs/companion-module-livepremier-plus.git",
   "bugs": "https://github.com/stoatworks-labs/companion-module-livepremier-plus/issues",
