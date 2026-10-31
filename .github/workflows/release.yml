@@ -1,0 +1,91 @@
+name: release
+
+# A Companion module is a platform-independent JavaScript package (not a native
+# binary). This packages it into the distributable .tgz via companion-module-build.
+# Trigger manually (Actions > release > Run workflow) or by pushing a v* tag.
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build module package
+        run: npm run package
+
+      - name: Collect package
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          # companion-module-build writes <manifest id>-<version>.tgz, and that
+          # archive IS the distributable: its root directory holds package.json,
+          # which is where Companion looks. `pkg/` is only the staging directory
+          # the tool builds it from — re-tarring that produces pkg/<id>/... and
+          # buries package.json a level deeper than any installer looks for it,
+          # which is how twelve releases shipped an archive nothing could load.
+          shopt -s nullglob
+          files=(*.tgz)
+          [ ${#files[@]} -gt 0 ] || { echo "::error::companion-module-build produced no .tgz"; exit 1; }
+          tgz=${files[0]}
+          cp "$tgz" out/
+          # A stable name for the /releases/latest/download/ alias the website and
+          # Burrow prefer, byte-identical to the versioned archive beside it.
+          cp "$tgz" "out/companion-module-livepremier-plus-pkg.tgz"
+          ls -la out
+
+      - name: Check the packages are loadable
+        shell: bash
+        run: |
+          set -euo pipefail
+          # No pipes below: `tar tzf | head` makes tar die of SIGPIPE once head
+          # has its line, and under pipefail that fails the step for a good
+          # package, depending on a race with the listing size.
+          for f in out/*.tgz; do
+            list=$(tar tzf "$f")
+            first=${list%%$'\n'*}
+            root=${first%%/*}
+            for want in "$root/package.json" "$root/companion/manifest.json"; do
+              case $'\n'"$list"$'\n' in
+                *$'\n'"$want"$'\n'*) ;;
+                *) echo "::error::$f has no $want, so Companion would not load it"; exit 1 ;;
+              esac
+            done
+            echo "$f: ok — root is $root/"
+          done
+
+      # Only when this run is NOT going to publish a release. On a tag the
+      # release itself carries the archives, so uploading them again buys
+      # nothing and spends the account's artifact storage — which ran out
+      # mid-sweep and took a release down with it, because the publish step
+      # never runs if this one fails. On a manual dispatch there is no release,
+      # so the artifact is the only way to get the file.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: companion-module-package
+          path: out/*
+          if-no-files-found: error
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: out/*
+          generate_release_notes: true

@@ -1,0 +1,21 @@
+name: test
+
+# The smoke test loads src/main.js against the real @companion-module/base,
+# which is the point -- a bump that breaks the module fails here rather than
+# on a rack -- so the deps are installed first, or every run dies on
+# ERR_MODULE_NOT_FOUND. Its link tests use a stand-in server on loopback.
+on:
+  push:
+  pull_request:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: node test/smoke.mjs
