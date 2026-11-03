@@ -10,6 +10,8 @@ A [Bitfocus Companion](https://bitfocus.io/companion) module for
 sits between your browser and an Analog Way LivePremier or Aquilon and adds a cue stack,
 layer groups, matrix routing and the rest.
 
+The [project page](https://stoatworks-labs.com/software/companion-livepremier-plus/) has the downloads and the [user guide](https://stoatworks-labs.com/software/companion-livepremier-plus/guide/).
+
 It drives what LivePremier Plus adds, and nothing else: GO on the Timeline with the standby
 cue written on the key, Layer Lock, Send to a layer group, Matrix Routing, HyperDecks,
 Triggers, the Console and your `@variables`. The switcher's own sources, memories and takes
