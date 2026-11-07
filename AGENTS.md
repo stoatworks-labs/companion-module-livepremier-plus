@@ -18,8 +18,10 @@ It drives **what LivePremier Plus adds**, never the switcher. Sources, memories 
 the AWJ module's (`analogway-awj`). Two connections that can both set a source is a show where
 nobody knows which one last did, so anything that can be said in AWJ stays out of here.
 
-JavaScript, Node 22 runtime, `@companion-module/base` **~2.1.3** (Companion 5.0.7 refuses
-2.2). No build step.
+JavaScript, Node 22 runtime, `@companion-module/base` **~2.2** (main since 2026-11-01). A
+module built on base 2.2 needs **Companion 5.1 or newer**: 5.0.7 refuses 2.2, and 5.1.2 takes
+any 2.2.x. v0.1.1 was released on ~2.1.3 and runs on 5.0.7, so the user guide's "Companion
+5.0 or newer" stays until the next release, then becomes 5.1. No build step.
 
 ## 2. Two ways in, and why
 
