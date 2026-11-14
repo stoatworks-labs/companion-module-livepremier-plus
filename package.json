@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@companion-module/tools": "^3.1.1",
-    "prettier": "^3.9.10"
+    "prettier": "^3.10.0"
   },
   "overrides": {
     "minimatch": "^11.0.1"
